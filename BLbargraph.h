@@ -9,10 +9,14 @@
 
 #include <Wire.h>
 
+#define HT16K33_CMD_RAM     0x00
+#define HT16K33_CMD_KEYS    0x40
+#define HT16K33_CMD_SETUP   0x80
+#define HT16K33_CMD_ROWINT  0xA0
+#define HT16K33_CMD_DIMMING 0xE0
+
 #define BB_DISPLAY_OFF 0x00
-
 #define BB_DISPLAY_ON  0x01
-
 #define BG_SIZE       28
 
 class BargraphLED
