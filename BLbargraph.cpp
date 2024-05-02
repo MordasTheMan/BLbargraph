@@ -18,7 +18,7 @@ void BG::init(uint8_t addr)
   write();
 }
 
-void BargraphLED::setBrightness(uint8_t brightness)
+void BG::setBrightness(uint8_t brightness)
 {
   brightness = brightness & 0x0F;
   
@@ -27,7 +27,7 @@ void BargraphLED::setBrightness(uint8_t brightness)
   Wire.endTransmission();
 }
 
-void BargraphLED::clear(void)
+void BG::clear(void)
 {  
   for (uint8_t i = 0; i < 8; i++)
   {
@@ -35,7 +35,7 @@ void BargraphLED::clear(void)
   }  
 }
 
-void BargraphLED::setPixel(uint8_t col, uint8_t row, uint8_t val)
+void BG::setPixel(uint8_t col, uint8_t row, uint8_t val)
 {
   // bounds checking
   col = col & 0x07;
@@ -54,7 +54,7 @@ void BargraphLED::setPixel(uint8_t col, uint8_t row, uint8_t val)
 
 }
 
-void BargraphLED::write(void)
+void BG::write(void)
 {
   Wire.beginTransmission(_i2c_addr);
   Wire.write(BB_CMD_RAM);
@@ -67,7 +67,7 @@ void BargraphLED::write(void)
   Wire.endTransmission();
 }
 
-void BargraphLED::setSegment(uint8_t pos, uint8_t val)
+void BG::setSegment(uint8_t pos, uint8_t val)
 {
   uint8_t row, col;
   
@@ -82,7 +82,7 @@ void BargraphLED::setSegment(uint8_t pos, uint8_t val)
   setPixel(col, row, val);
 }
 
-uint8_t BargraphLED::size(void)
+uint8_t BG::size(void)
 {
   return BG_SIZE;
 }
