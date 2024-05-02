@@ -19,7 +19,7 @@
 #define BB_DISPLAY_ON  0x01
 #define BG_SIZE       28
 
-class BargraphLED
+class BG
   {
     public:
       void init(uint8_t addr);
