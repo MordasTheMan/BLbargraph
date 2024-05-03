@@ -74,7 +74,6 @@ class BGSequence  {
 
     int IndexSegment;
     unsigned long  IntervalBG = 50;
-    unsigned long  IntervalBG2 = 35;
     unsigned long  IntervalVENT = 2500;
     bool startVent = true;
     unsigned long  lastUpdateBG; //= 0; // last update of position
