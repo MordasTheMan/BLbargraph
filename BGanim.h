@@ -38,7 +38,7 @@ const uint8_t barGraph[28][2]  = {
   {6, 3},
 };
 
-class BGanim  {
+class BGanimation  {
   public:
 
     void BGanim();
