@@ -40,6 +40,8 @@ class BG
     private:
       uint16_t *_buffer;
       uint8_t  _i2c_addr;
+
+      void writeRow(uint8_t row);
   };
 
 #endif
