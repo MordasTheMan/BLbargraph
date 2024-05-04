@@ -19,7 +19,7 @@
 #define BB_DISPLAY_ON  0x01
 #define BG_SIZE       28
 
-class BG
+class BGraph
   {
     public:
       void init(uint8_t addr);
