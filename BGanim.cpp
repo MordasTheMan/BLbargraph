@@ -21,13 +21,10 @@ void BGanimation::seqIdle1(unsigned long currentMillis)
     lastUpdateBG = currentMillis;
     for (int i = 0; i <= 27; i++)
     {
-      if (i == IndexSegment )
-        {
-          drawBarGraph(barGraph[i][0], barGraph[i][1], 1);
-        }
+      drawBarGraph(barGraph[i][0], barGraph[i][1], 1);
     }
+    bargraph.write();
   }
-  bargraph.write();
 }
 
 void BGanimation::drawBarGraph( uint8_t row, uint8_t col, uint8_t val )
