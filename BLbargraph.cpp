@@ -104,3 +104,29 @@ uint8_t BG::size(void)
 {
   return BG_SIZE;
 }
+
+void BG::writeRow(uint8_t row)
+{
+  // flip vertically
+  if (_vFlipped)
+  {
+    row = 7 - row;
+  }
+  
+  // read out the buffer so we can flip horizontally
+  uint16_t out = _buffer[row];
+  if (_hFlipped)
+  {
+    out = _flip_uint16(out);
+  }
+  
+  if (_reversed)
+  {
+    Wire.write(out >> 8); // second byte
+    Wire.write(out & 0xFF); // first byte
+  }
+  else
+  {
+    Wire.write(out & 0xFF); // first byte
+    Wire.write(out >> 8); // second byte
+  }
