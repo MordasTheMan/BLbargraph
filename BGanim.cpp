@@ -23,8 +23,8 @@ void BGanimation::seqIdle1(unsigned long currentMillis)
     {
       drawBarGraph(barGraph[i][0], barGraph[i][1], 1);
     }
-    bargraph.write();
   }
+  bargraph.write();
 }
 
 void BGanimation::drawBarGraph( uint8_t row, uint8_t col, uint8_t val )
