@@ -2,7 +2,7 @@
 #include "BLbargraph.h"
 BG bargraph = BG();
 
-void BGanimation::BGinit()
+void BGanimation::initiate()
 {
   BG.init(0x70);
   delay(1000);
