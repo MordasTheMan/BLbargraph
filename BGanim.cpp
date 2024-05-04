@@ -4,9 +4,9 @@ BG bargraph = BG();
 
 void BGanimation::BGanimate()
 {
-  BGraph.init(0x70);
+  BG.init(0x70);
   delay(1000);
-  BGraph.setBrightness(15);
+  BG.setBrightness(15);
 }
 
 void BGanimation::changeInterval(uint8_t NewInterval)
