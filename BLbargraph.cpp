@@ -107,6 +107,7 @@ uint8_t BG::size(void)
 
 void BG::writeRow(uint8_t row)
 {
+    uint16_t out = _buffer[row];
     Wire.write(out & 0xFF); // first byte
     Wire.write(out >> 8); // second byte
   }
