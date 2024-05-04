@@ -27,6 +27,10 @@ class BG
       void setBrightness(uint8_t brightness);
        
       void setPixel(uint8_t row, uint8_t col, uint8_t onff);
+
+      void setRow(uint8_t row, uint16_t value);
+
+      void setColumn(uint8_t col, uint8_t value);
       
       void clear(void);
 
