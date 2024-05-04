@@ -54,6 +54,24 @@ void BG::setPixel(uint8_t col, uint8_t row, uint8_t val)
 
 }
 
+void BG::setRow(uint8_t row, uint16_t value)
+{
+
+  row = row & 0x07;
+  
+  // write it
+  _buffer[row] = value;
+}
+
+void BG::setColumn(uint8_t col, uint8_t value)
+{
+
+  for (uint8_t row = 0; row < 8; row++)
+  {
+    setPixel(col, row, (value & (1 << row)) > 0);
+  }
+}
+
 void BG::write(void)
 {
   Wire.beginTransmission(_i2c_addr);
