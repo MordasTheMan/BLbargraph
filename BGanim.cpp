@@ -2,19 +2,19 @@
 #include "BLbargraph.h"
 BG bargraph = BG();
 
-void BGanim::BGinit()
+void BGanimation::BGinit()
 {
   BG.init(0x70);
   delay(1000);
   BG.setBrightness(15);
 }
 
-void BGanim::changeInterval(uint8_t NewInterval)
+void BGanimation::changeInterval(uint8_t NewInterval)
 {
   IntervalBG = NewInterval;
 }
 
-void BGanim::seqIdle1(unsigned long currentMillis)
+void BGanimation::seqIdle1(unsigned long currentMillis)
 {
   if ((currentMillis - lastUpdateBG) > IntervalBG)
   {
