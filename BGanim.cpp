@@ -6,7 +6,7 @@ void BGanimation::BGanimate()
 {
   bargraph.init(0x70);
   delay(1000);
-  bargraph.setBrightness(15);
+  bargraph.setBrightness(10);
 }
 
 void BGanimation::changeInterval(uint8_t NewInterval)
@@ -30,5 +30,4 @@ void BGanimation::seqIdle1(unsigned long currentMillis)
 void BGanimation::drawBarGraph( uint8_t row, uint8_t col, uint8_t val )
 {
   bargraph.setPixel(row, col, val);
-  bargraph.write();
 }
