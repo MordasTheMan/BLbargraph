@@ -41,7 +41,7 @@ const uint8_t barGraph[28][2]  = {
 class BGanimation  {
   public:
 
-    void BGanim();
+    void BGanimate();
 
     void initiate(uint8_t BGMODE);
     void changeInterval(uint8_t NewInterval);
