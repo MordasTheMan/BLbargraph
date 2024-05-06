@@ -30,6 +30,12 @@ void BGanimation::initiate(uint8_t BGMODE)
       IntervalBG = 50;
       DirectionBG = FORWARD;
       break;
+    case 4:       //Vent
+      IndexSegment = 0;
+      lastUpdateBG = 0;
+      IntervalBG = 100;
+      DirectionBG = FORWARD;
+      break;
     }
 }
 
