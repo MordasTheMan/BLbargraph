@@ -41,14 +41,19 @@ const uint8_t barGraph[28][2]  = {
 class BGanimation  {
   public:
 
+    void BGanim();
+        enum  direction { FORWARD, REVERSE };
+        direction DirectionBG ;
+
     void BGanimate();
 
     void initiate(uint8_t BGMODE);
     void changeInterval(uint8_t NewInterval);
     void seqBGFireFan(unsigned long currentMillis);
     void seqBGFireVent(unsigned long currentMillis);
+    void seqBGFireTVG(unsigned long currentMillis);
+    void seqBGVentTVG(unsigned long currentMillis);
     void seqIdle1(unsigned long currentMillis);
-    void seqIdle2(unsigned long currentMillis);
     void seqIdleAL(unsigned long currentMillis);
     void seqVent(unsigned long currentMillis);
     void clearLEDs();
@@ -61,5 +66,8 @@ class BGanimation  {
     bool startVent = true;
     unsigned long  lastUpdateBG; //= 0; // last update of position
     unsigned long  lastUpdateVENT;
+
+  private:
+    bool _DirectionChange = false;
 };
 #endif
