@@ -2,6 +2,37 @@
 #include "BLbargraph.h"
 BG bargraph = BG();
 
+void BGanimation::initiate()
+{
+  switch (BGMODE)
+    {
+      case 0:  //movie idle
+      IndexSegment = 0;
+      lastUpdateBG = 0;
+      IntervalBG = 60;
+      DirectionBG = FORWARD;
+      break;
+    case 1:    //fan idle
+      IndexSegment = 0;
+      lastUpdateBG = 0;
+      IntervalBG = 60;
+      DirectionBG = FORWARD;
+      break;
+    case 2:     //fan fire
+      IndexSegment = 0;
+      lastUpdateBG = 0;
+      IntervalBG = 50;
+      DirectionBG = FORWARD;
+      break;
+    case 3:      //TVG fire
+      IndexSegment = 0;
+      lastUpdateBG = 0;
+      IntervalBG = 50;
+      DirectionBG = FORWARD;
+      break;
+    }
+}
+
 void BGanimation::BGanimate()
 {
   bargraph.init(0x70);
