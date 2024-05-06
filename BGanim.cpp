@@ -47,15 +47,48 @@ void BGanimation::changeInterval(uint8_t NewInterval)
 
 void BGanimation::seqIdle1(unsigned long currentMillis)
 {
-  if ((currentMillis - lastUpdateBG) > IntervalBG)
+if ((currentMillis - lastUpdateBG) > IntervalBG)
   {
     lastUpdateBG = currentMillis;
-    for (int i = 0; i <= 27; i++)
+    if (DirectionBG == FORWARD)
     {
-      drawBarGraph(barGraph[i][0], barGraph[i][1], 1);
+      for (int i = 0; i <= 27; i++)
+      {
+        if (i == IndexSegment )
+        {
+          drawBarGraph(barGraph[i][0], barGraph[i][1], 1);
+        }
+      }
     }
+    else
+    {
+      for (int i = 0; i <= 27; i++)
+      {
+        if (i == IndexSegment )
+        {
+          drawBarGraph(barGraph[i + 1][0], barGraph[i + 1][1], 0);
+        }
+      }
+    }
+    if (IndexSegment == 27)
+    {
+      DirectionBG = REVERSE;
+    }
+    if (IndexSegment == 0)
+    {
+      DirectionBG = FORWARD;
+    }
+    if (DirectionBG == FORWARD)
+    {
+      IndexSegment++;
+    }
+    else
+    {
+      IndexSegment--;
+    }
+
+    bargraph.write();
   }
-  bargraph.write();
 }
 
 void BGanimation::drawBarGraph( uint8_t row, uint8_t col, uint8_t val )
