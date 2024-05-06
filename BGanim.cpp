@@ -2,7 +2,7 @@
 #include "BLbargraph.h"
 BG bargraph = BG();
 
-void BGanimation::initiate()
+void BGanimation::initiate(uint8_t BGMODE)
 {
   switch (BGMODE)
     {
