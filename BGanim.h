@@ -41,7 +41,7 @@ const uint8_t barGraph[28][2]  = {
 class BGanimation  {
   public:
 
-    void BGanim();
+    void BGanime();
         enum  direction { FORWARD, REVERSE };
         direction DirectionBG ;
 
