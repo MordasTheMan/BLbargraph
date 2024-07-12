@@ -92,12 +92,12 @@ if ((currentMillis - lastUpdateBG) > IntervalBG)
     {
       IndexSegment--;
     }
-
-    bargraph.write();
   }
+ bargraph.write();
 }
 
 void BGanimation::drawBarGraph( uint8_t row, uint8_t col, uint8_t val )
 {
   bargraph.setPixel(row, col, val);
+  bargraph.write();
 }
